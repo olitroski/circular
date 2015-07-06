@@ -1,5 +1,5 @@
 # Test estadísticos para datos circulares
----
+
 
 Este repositorio es parte de un trabajo de investigación sobre estadística circular en el cual se utilizaron pruebas de inferencia que fueron desarrollados para funcionar como `source` en R. Fue escrito por *Oliver Rojas Bustamante* del *Laboratorio de Sueño y Neurobiología* en el *INTA* de la *Universidad de Chile*.
 
@@ -15,10 +15,13 @@ En este enlace encontrarás las pruebas del repositorio:
 
 ### Test disponibles
 * Estadisticas descriptivas
-* Watson & Williams multigroup test
-* Wheeler & Watson non parametric multigroup test
-* Hottelling test for paired data
-* Moore test non paramétric test for paired data 
+* Multigrupo: Test de Watson & Williams
+* Multigrupo: Wheeler & Watson (No paramétrico)
+* Datos pareados: Test de Hottelling
+* Datos pareados: Test de Moore (No paramétrico) 
+* Correlación Angular - Angular: Fisher & Lee
+* Correlación Angular - Angular: Mardia (No paramétrico)
+* Correlación Lineal - Angular: Jhonson, Wherly & Mardia
 
 
 ## Ejemplo de uso
