@@ -1,6 +1,5 @@
 # Test estadísticos para datos circulares
 
-
 Este repositorio es parte de un trabajo de investigación sobre estadística circular en el cual se utilizaron pruebas de inferencia que fueron desarrollados para funcionar como `source` en R. Fue escrito por *Oliver Rojas Bustamante* del *Laboratorio de Sueño y Neurobiología* en el *INTA* de la *Universidad de Chile*.
 
 Cada test tiene sus propios requisitos, aunque en general se debe contar con vectores de ángulos en grados (no radianes) con modulo de 360°. Todas las transformaciones o cálculos lo realizan las funciones de cada script.
@@ -30,7 +29,7 @@ Estadísticas descriptivas:
 > Cargar el source
 >
 	library(circular); library(devtools)
-	dir <- "https://raw.githubusercontent.com/olitroski/circular/master/summ.circ.R"
+	dir <- "https://raw.githubusercontent.com/olitroski/circular/master/summ.circ.r"
 	source_url(dir)
 
 > Cargar datos y ejecutar
