@@ -13,7 +13,7 @@ En este enlace encontrarás las pruebas del repositorio:
 
 [**Link a estadísticas circulares**](https://github.com/olitroski/circular/blob/master/stats.md)
 
-### Test disponibles
+## Test disponibles
 * Estadisticas descriptivas
 * Multigrupo: Test de Watson & Williams
 * Multigrupo: Wheeler & Watson (No paramétrico)
@@ -25,32 +25,35 @@ En este enlace encontrarás las pruebas del repositorio:
 
 
 ## Ejemplo de uso
-Veamos por ejemplo el test de Moore (1980) para muestras pareadas.
+Estadísticas descriptivas: 
 
-> Cargamos el script del test (se debe cargar el paquete `devtools` y `circular`)
+> Cargar el source
+>
+	library(circular); library(devtools)
+	dir <- "https://raw.githubusercontent.com/olitroski/circular/master/summ.circ.R"
+	source_url(dir)
 
-	library(devtools); 	library(circular)
-	u <- "https://raw.githubusercontent.com/olitroski/circular/master/paired.moore.r"
-	source_url(u)
+> Cargar datos y ejecutar
+> 
+	data <- c(45,55,81,96,110,117,132,154)
+	summ.circ(data)
 
-
-> Cargar los datos (en forma de vectores) y ejecutar el test.
-
-	# Datos pareados (ángulos en grados)
-	var1 <- c(105,120,135,95,155,170,160,155,120,115)
-	var2 <- c(205,210,235,245,260,255,240,245,210,200)
-	
-	# Ejecutar el test
-	moore.paired(var1, var2)
-	
 > Resultados
+> 
+	       Summary of Circular Statistics
+	+---------------------+---------------------+
+	| Mean        98.988  | Min          45.00  |
+	| rho          0.825  | Q1 (25%)     74.50  |
+	| Sum(cos)/n  -0.129  | Median      103.00  |
+	| Sum(sin)/n   0.815  | Q3 (75%)    120.75  |
+	| Sample n         8  | Max         154.00  |
+	+---------------------+---------------------+
 
-	Test no parametrico de Moore para muestras circulares pareadas
-	k pares       =  10 
-	Estadistico R =  1.639599 
-	p-valor       =  0.0256
+
 
 **Nota:** Todos los test han sido checkeados, sin embargo, nuevas validaciones o indicaciones son bienvenidas en el email señalado. Pronto estará en inglés. Aportes en traducción también se agradecerán mucho.
+
+
 
 ![logo_uchile](https://github.com/olitroski/circular/blob/master/logo.inta.png)
 
