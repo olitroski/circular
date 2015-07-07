@@ -48,25 +48,34 @@ for (i in 1:5) {
 
 
 # Intervalos de confianza 95% con 10000 reps, vía bootstrap
-limites <- mle.vonmises.bootstrap.ci(data, reps=10000)
+limites <- mle.vonmises.bootstrap.ci(data, reps=5000)
 limites <- unlist(limites[1])
 
  # Recorte
  li <- as.character(round(limites[1],3)); li <- paste("        ", li, sep=""); li <- substr(li,   nchar(li)-6, nchar(li))
  ls <- as.character(round(limites[2],3)); ls <- paste("        ", ls, sep=""); ls <- substr(ls,   nchar(ls)-6, nchar(ls))
 
-	
-	
+
+# Parámetro de concentracion
+kapa <- mle.vonmises(data)
+kapa <- kapa[["kappa"]]
+k <- as.character(round(kapa,3)); k <- paste("        ", k, sep=""); k <- substr(k,   nchar(k)-6, nchar(k))
+
+
+ 
 # Tabla de salida
 cat("\n     Summary of Circular Statistics\n")
 cat("+--------------------+--------------------+\n")
 cat("| Mean      ",  mu, "| Min      ", q[1],"|\n")
-cat("| rho       ", rho, "| Q1 (25%) ", q[2],"|\n")
+cat("| rho       ", rho, "| Q1(25%)  ", q[2],"|\n")
 cat("| Sum(cos)/n", cos, "| Median   ", q[3],"|\n")
-cat("| Sum(sin)/n", sin, "| Q3 (75%) ", q[4],"|\n")
+cat("| Sum(sin)/n", sin, "| Q3(75%)  ", q[4],"|\n")
 cat("| Sample n  ",   n, "| Max      ", q[5],"|\n")
-cat("| Lim.Inf 5%",  li, "| Lim.Sup 5%",   ls,"|\n")
+cat("| Lim.Inf 5%",  li, "| Kappa     ", k,"|\n")
+cat("| Lim.Sup 5%",  ls, "|                    |\n")
 cat("+--------------------+--------------------+\n")
+
+
 
 
 # Set output list

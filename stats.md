@@ -18,7 +18,7 @@ El contenido del repositorio se encuentra dividido por script disponible, cada u
 
 
 ## Estadísticas descriptivas
-Este es un pequeño script para mostrar un output de estadísticas circulares de forma tabular más amigable que lo existente.
+Este es un pequeño script para mostrar un output de estadísticas circulares de forma tabular más amigable que lo existente. Los limites de confianza están calculados por bootstrap con 5000 repeticiones por lo que puede tomar algún tiempo de cálculo.
 
 > Notas:
 >
