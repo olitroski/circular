@@ -11,7 +11,7 @@
 #despues <- c(205,210,235,245,260,255,240,245,210,200)
 
 # Funcion
-paired.moore <- function(var1, var2)   {
+paired.moore <- function(var1, var2, nrand=1000)   {
 require(circular)
 
 # Ver cual es mayor para la resta (ARREGLAR PORFA)
@@ -52,7 +52,7 @@ R.Moore <- sqrt((X.moore^2 + Y.moore^2) / k)				# R Observado
 
 
 # Test randomizado
-NR <- 9999   # Number of randomizados
+NR <- nrand   # Number of randomizados
 nxtrm <- 1
 
 # Calcula NR rantomizaciones

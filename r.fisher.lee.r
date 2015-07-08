@@ -46,20 +46,20 @@ return(rFL)
 ## Metodo de Upton & Fingleton para Limites 
 fisher.lee.limits <- function(lcdat1, lcdat2) {
 
-n <- c(1: length(a))
-upton <- data.frame(n, a, b)
+n <- c(1: length(lcdat1))
+upton <- data.frame(n, lcdat1, lcdat2)
 
 	# Calculamos el vector de r para el procedimiento
 	i = 1
 	r.upton <- vector("numeric", length=0)
 	for (i in n) {
 		temp <- upton[-i,]
-		r.temp <- rFLCorrCoeff(temp$a, temp$b)
+		r.temp <- rFLCorrCoeff(temp$lcdat1, temp$lcdat2)
 		r.upton <- c(r.upton, r.temp)
 	}
 
 # Media y varianza para calculos
-r.obs <- rFLCorrCoeff(a,b)
+r.obs <- rFLCorrCoeff(lcdat1, lcdat2)
 mean.upton <- mean(r.upton)
 var.upton  <- stats::var(r.upton)
 n <- length(r.upton)
@@ -74,7 +74,7 @@ return(c(L1, L2))
 
 
 ## Test de aleatorizacion
-fisher.lee.random <- function(lcdat1, lcdat2, NR=9999) {
+fisher.lee.random <- function(lcdat1, lcdat2, NR=999) {
 
 # tranformaciones
 library(circular)
@@ -99,7 +99,7 @@ return(pval)
 
 
 ## Test de Fisher-Lee
-r.fisher.lee <- function(data1, data2, NR=9999)  {
+r.fisher.lee <- function(data1, data2, NR=1999)  {
 options(digits=5)
 
 k <- length(data1)

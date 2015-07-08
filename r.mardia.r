@@ -3,6 +3,10 @@
 #------ Escrito por olitroski@gmail.com en Lab.Sueño INTA UChile -------#
 #-----------------------------------------------------------------------#
 # Mardia 1975
+# Datos de ejemplo
+# cdat1 <- c(30,10,350,0,340,330,20,30)
+# cdat2 <- c(60,50,10,350,330,0,40,70)
+
 
 ## Funcion para el estadistico
 r.mardia.stat <- function(cdat1, cdat2)    {
@@ -69,21 +73,4 @@ cat("\t\t", "p-valor       = ", data2)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# r.mardia(dat1, dat2)
